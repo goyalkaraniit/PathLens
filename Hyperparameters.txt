@@ -1,0 +1,221 @@
+#!/bin/bash																																				
+function run_exp(){																																				
+python ProbabilisticNew.py --input $1 --train_rate $2 --val_rate $3 --partition $4 --num_partitions $5 --rank $6 --connect_type $7 --mode $8 --min_num_connect $9 --percent_connect ${10} --num_neighbors ${11} --affinity ${12} --eigen_solver ${13} --labels ${14} --model ${15} --runs ${16} --epochs ${17} --lr ${18} --weight_decay ${19} --num_hid ${20} --dropout ${21} --mu ${22} --p ${23} --K ${24} --num_heads ${25} --alpha ${26} --dprate ${27}																																				
+}																																
+
+																											
+run_exp cornell	0.6	0.2	TRUE	40	page	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.001	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp cornell	0.6	0.2	TRUE	40	div	global	lmh	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp cornell	0.6	0.2	TRUE	30	page	global	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gat	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5						
+run_exp cornell	0.6	0.2	TRUE	30	page	global	lmh	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	appnp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	1	0.5						
+run_exp cornell 0.6 0.2 True 35 div local mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5 																															
+run_exp cornell	0.6	0.2	TRUE	40	page	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp cornell	0.6	0.2	TRUE	30	div	global	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gatv2	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5						
+run_exp cornell	0.6	0.2	TRUE	40	page	local	low	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.01	0.0005	16	0.5	0.1	2	4	8	0.1	0.5					
+run_exp cornell 0.6 0.2 True 30 div global high 3 0.55 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.8 0.1 1.5 5 8 0.1 0.5 																															
+run_exp cornell	0.6	0.2	TRUE	50	page	local	low	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	bern	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp cornell	0.6	0.2	TRUE	30	page	local	high	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.005	0.0005	16	0.5	0.1	1.5	16	4	0.1	0.5						
+run_exp cornell 0.6 0.2 True 40 page global mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5 																																
+run_exp cornell 0.6 0.2 True 50 div local lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0001 16 0.7 0.1 1.5 20 8 0.1 0.5 																															
+run_exp cornell 0.6 0.2 True 40 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																																
+run_exp cornell 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.01 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.5 																															
+run_exp cornell 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.0 0.1 1.5 20 8 0.6 0.6 																																
+
+																																
+run_exp texas	0.6	0.2	TRUE	50	page	global	mid	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp texas	0.6	0.2	TRUE	40	page	global	high	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp texas	0.6	0.2	TRUE	30	div	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	gat	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5				
+run_exp texas 0.6 0.2 True 35 page global lmh 3 0.25 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5																															
+run_exp texas 0.6 0.2 True 35 div global high 3 0.45 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5																															
+run_exp texas	0.6	0.2	TRUE	40	page	local	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp texas	0.6	0.2	TRUE	30	div	local	low	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	gatv2	15	100	0.001	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5					
+run_exp texas	0.6	0.2	TRUE	50	page	local	low	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.01	0.0005	16	0.5	0.1	2	8	8	0.1	0.5					
+run_exp texas	0.6	0.2	TRUE	30	page	local	mid	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	dagnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	5	8	0.1	0.5					
+run_exp texas 0.6 0.2 True 55 page global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr bern 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5																															
+run_exp texas	0.6	0.2	TRUE	40	div	local	low	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.01	0.0005	16	0.5	0.1	1.5	4	4	0.1	0.5					
+run_exp texas 0.6 0.2 True 30 page local high 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.2 0.1 1.5 20 8 0.5 0.5																															
+run_exp texas 0.6 0.2 True 40 page global high 3 0.4 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5																															
+run_exp texas 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5																																
+run_exp texas 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.001 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.7																															
+run_exp texas 0.6 0.2 True 50 div global low 3 0.5 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.0002 0.0005 16 0.0 0.1 1.5 20 8 0.6 0.4 																																
+		
+    																														
+run_exp wisconsin	0.6	0.2	TRUE	30	page	global	mid	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp wisconsin	0.6	0.2	TRUE	40	div	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp wisconsin	0.6	0.2	TRUE	40	div	global	low	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	gat	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5					
+run_exp wisconsin 0.6 0.2 True 25 page global lmh 2 0.25 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5																																
+run_exp wisconsin	0.6	0.2	TRUE	50	page	local	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gprgnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	1	0.5					
+run_exp wisconsin	0.6	0.2	TRUE	30	page	global	low	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp wisconsin	0.6	0.2	TRUE	30	page	global	lmh	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gatv2	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5					
+run_exp wisconsin	0.6	0.2	TRUE	30	div	global	mid	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.05	0.0005	16	0.5	0.1	2	4	8	0.1	0.5				
+run_exp wisconsin	0.6	0.2	TRUE	50	page	global	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	dagnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	5	8	0.1	0.5					
+run_exp wisconsin	0.6	0.2	TRUE	40	div	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	bern	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.6				
+run_exp wisconsin	0.6	0.2	TRUE	40	page	global	high	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.01	0.0005	16	0.5	0.1	1.5	4	4	0.1	0.5						
+run_exp wisconsin 0.6 0.2 True 50 div global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5																															
+run_exp wisconsin 0.6 0.2 True 30 page local lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5 																																
+run_exp wisconsin 0.6 0.2 True 30 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5 																																
+run_exp wisconsin 0.6 0.2 True 50 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.001 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.7																															
+run_exp wisconsin 0.6 0.2 True 30 page local mid 3 0.4 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.2 0.1 1.5 20 8 0.6 0.4				
+																												
+																																
+run_exp actor	0.6	0.2	TRUE	40	page	global	lmh	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.001	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp actor	0.6	0.2	TRUE	40	page	local	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5			
+run_exp actor	0.6	0.2	TRUE	40	page	local	high	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	gat	15	100	0.001	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5			
+run_exp actor	0.6	0.2	TRUE	40	div	global	low	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	appnp	15	100	0.001	0.0005	16	0.5	0.1	1.5	10	8	0.7	0.5			
+run_exp actor 0.6 0.2 True 40 page global high 3 0.25 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.001 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5 																															
+run_exp actor	0.6	0.2	TRUE	40	div	global	high	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5			
+run_exp actor 0.6 0.2 True 30 div global high 3 0.55 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.001 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																															
+run_exp actor	0.6	0.2	TRUE	30	div	global	low	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.01	0.0005	16	0.5	0.1	2	8	8	0.1	0.5			
+run_exp actor	0.6	0.2	TRUE	30	page	local	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	dagnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	5	8	0.1	0.5			
+run_exp actor	0.6	0.2	TRUE	40	page	local	high	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	bern	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp actor	0.6	0.2	TRUE	50	page	global	lmh	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.01	0.0005	16	0.5	0.1	1.5	4	4	0.1	0.5			
+run_exp actor 0.6 0.2 True 30 page local high 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.2 0.1 1.5 20 8 0.5 0.5 																														
+run_exp actor 0.6 0.2 True 40 div local lmh 3 0.4 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																															
+run_exp actor 0.6 0.2 True 40 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.005 0.0005 16 0.2 0.1 1.5 20 8 0.1 0.5 																															
+run_exp actor 0.6 0.2 True 50 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5 																															
+run_exp actor 0.6 0.2 True 50 div local mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.2 0.1 1.5 20 8 0.4 0.4 						
+																										
+																																
+run_exp chameleon_filtered	0.6	0.2	TRUE	50	page	global	low	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp chameleon_filtered	0.6	0.2	TRUE	50	page	global	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5				
+run_exp chameleon_filtered	0.6	0.2	TRUE	40	div	local	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gat	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5				
+run_exp chameleon_filtered	0.6	0.2	TRUE	40	page	global	low	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	appnp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.7	0.5			
+run_exp chameleon_filtered 0.6 0.2 True 25 div local lmh 2 0.35 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.7 0.5 																															
+run_exp chameleon_filtered	0.6	0.2	TRUE	40	page	global	mid	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5			
+run_exp chameleon_filtered	0.6	0.2	TRUE	30	div	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	gatv2	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5			
+run_exp chameleon_filtered	0.6	0.2	TRUE	40	page	global	low	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.05	0.0005	16	0.5	0.1	2	8	8	0.1	0.5				
+run_exp chameleon_filtered	0.6	0.2	TRUE	50	page	local	mid	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	dagnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	5	8	0.1	0.5			
+run_exp chameleon_filtered	0.6	0.2	TRUE	30	page	global	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	bern	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5			
+run_exp chameleon_filtered	0.6	0.2	TRUE	50	page	local	lmh	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.005	0.0005	16	0.5	0.1	1.5	16	4	0.1	0.5			
+run_exp chameleon_filtered 0.6 0.2 True 30 page local high 3 0.4 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.005 0.0005 16 0.2 0.1 1.5 20 8 0.5 0.5 																																
+run_exp chameleon_filtered 0.6 0.2 True 30 page global mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.005 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.2																															
+run_exp chameleon_filtered 0.6 0.2 True 40 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.005 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5																															
+run_exp chameleon_filtered 0.6 0.2 True 30 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.7																															
+run_exp chameleon_filtered 0.6 0.2 True 40 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.0 0.1 1.5 20 8 0.6 0.6 								
+																							
+																																
+run_exp squirrel_filtered	0.6	0.2	TRUE	30	page	global	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5
+run_exp squirrel_filtered	0.6	0.2	TRUE	50	page	global	mid	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5			
+run_exp squirrel_filtered 0.6 0.2 True 25 div local low 2 0.5 10 nearest_neighbors lobpcg cluster_qr gat 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																														
+run_exp squirrel_filtered	0.6	0.2	TRUE	50	page	global	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	appnp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	1	0.5			
+run_exp squirrel_filtered	0.6	0.2	TRUE	30	page	local	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gprgnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	1	0.5			
+run_exp squirrel_filtered	0.6	0.2	TRUE	40	page	local	low	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5			
+run_exp squirrel_filtered 0.6 0.2 True 35 div local low 3 0.5 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5																														
+run_exp squirrel_filtered	0.6	0.2	TRUE	40	page	local	high	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.05	0.0005	16	0.5	0.1	2	4	8	0.1	0.5				
+run_exp squirrel_filtered 0.6 0.2 True 40 div local low 3 0.35 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.5																																
+run_exp squirrel_filtered	0.6	0.2	TRUE	30	div	global	mid	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	bern	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5		
+run_exp squirrel_filtered	0.6	0.2	TRUE	40	div	local	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.005	0.0005	16	0.5	0.1	1.5	16	4	0.1	0.5				
+run_exp squirrel_filtered 0.6 0.2 True 30 page local low 3 0.5 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.005 0.0005 16 0.2 0.1 1.5 20 8 1.0 0.5 																															
+run_exp squirrel_filtered 0.6 0.2 True 40 page global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																														
+run_exp squirrel_filtered 0.6 0.2 True 40 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5																																
+run_exp squirrel_filtered 0.6 0.2 True 40 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.001 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.7 																																
+run_exp squirrel_filtered 0.6 0.2 True 50 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.2 0.1 1.5 20 8 0.4 0.4 				
+																												
+																																
+run_exp arxiv-year 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr mlp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp arxiv-year 0.6 0.2 True 30 div global mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr sage 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5																																
+run_exp arxiv-year 0.6 0.2 True 30 div global mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr gat 15 100 0.001 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																															
+run_exp arxiv-year 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5																																
+run_exp arxiv-year 0.6 0.2 True 30 page global low 3 0.5 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.001 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5 																																
+run_exp arxiv-year 0.6 0.2 True 30 div local low 3 0.5 10 nearest_neighbors lobpcg cluster_qr linkx 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																																
+run_exp arxiv-year 0.6 0.2 True 30 div global low 3 0.5 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.001 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																															
+run_exp arxiv-year 0.6 0.2 True 30 page global high 3 0.3 10 nearest_neighbors lobpcg cluster_qr pgnn 15 100 0.01 0.0005 16 0.5 0.1 2.0 8 8 0.1 0.5																																
+run_exp arxiv-year 0.6 0.2 True 30 page local lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.8 0.1 1.5 20 8 0.1 0.5 																																
+run_exp arxiv-year 0.6 0.2 True 30 div global mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr bern 15 100 0.05 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.7 																																
+run_exp arxiv-year 0.6 0.2 True 30 page local low 3 0.3 10 nearest_neighbors lobpcg cluster_qr aero 15 100 0.01 0.0005 16 0.5 0.1 1.5 4 4 0.1 0.5 																																
+run_exp arxiv-year      0.6     0.2     True    30      page    global  lmh     3       0.5     10      nearest_neighbors       lobpcg  cluster_qr      dirsage 15      100     0.05    0.0005  16      0.2     0.1     1.5     20      8       0.5     0.5     																																
+run_exp arxiv-year      0.6     0.2     True    50      page    local   mid     3       0.3     10      nearest_neighbors       lobpcg  cluster_qr      pmlpgcn 15      100     0.05    0.0005  16      0.4     0.1     1.5     20      8       0.1     0.5     																															
+run_exp arxiv-year      0.6     0.2     True    30      page    global  lmh     3       0.3     10      nearest_neighbors       lobpcg  cluster_qr      pmlpappnp       15      100     0.01    0.0005  16      0.3     0.1     1.5     20      8       0.1     0.5     																															
+run_exp arxiv-year      0.6     0.2     True    40      page    global  lmh     3       0.4     10      nearest_neighbors       lobpcg  cluster_qr      poly    15      100     0.01    0.0005  16      0.7     0.1     1.5     20      8       0.1     0.7     										
+
+																					
+																																
+run_exp cora 0.6 0.2 True 40 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr mlp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5																															
+run_exp cora 0.6 0.2 True 40 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr sage 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp cora 0.6 0.2 True 30 div local low 3 0.3 10 nearest_neighbors lobpcg cluster_qr gat 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																																
+run_exp cora 0.6 0.2 True 50 div global low 3 0.5 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.7 0.5 																															
+run_exp cora 0.6 0.2 True 50 div global mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5 																																
+run_exp cora 0.6 0.2 True 40 page local high 3 0.4 10 nearest_neighbors lobpcg cluster_qr linkx 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																																
+run_exp cora 0.6 0.2 True 30 page global lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																																
+run_exp cora 0.6 0.2 True 30 page local high 3 0.3 10 nearest_neighbors lobpcg cluster_qr pgnn 15 100 0.01 0.0005 16 0.5 0.1 2.0 8 8 0.1 0.5 																															
+run_exp cora 0.6 0.2 True 40 div global high 3 0.4 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 5 8 0.1 0.5																															
+run_exp cora 0.6 0.2 True 30 div local mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr bern 15 100 0.05 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.6 																																
+run_exp cora 0.6 0.2 True 40 page local mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr aero 15 100 0.01 0.0005 16 0.5 0.1 1.5 16 4 0.1 0.5 																															
+run_exp cora 0.6 0.2 True 30 page global high 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5																															
+run_exp cora 0.6 0.2 True 50 div global low 3 0.5 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																															
+run_exp cora 0.6 0.2 True 50 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.3 0.1 1.5 20 8 0.1 0.5																																
+run_exp cora 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.001 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.5 																																
+run_exp cora 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.0 0.1 1.5 20 8 0.6 0.4 																																
+
+
+																																
+run_exp pubmed 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr mlp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 40 page local high 3 0.5 10 nearest_neighbors lobpcg cluster_qr sage 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5																															
+run_exp pubmed 0.6 0.2 True 40 page global lmh 3 0.4 10 nearest_neighbors lobpcg cluster_qr gat 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 30 page global lmh 3 0.4 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.7 0.5																															
+run_exp pubmed 0.6 0.2 True 40 div local low 3 0.5 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5																																
+run_exp pubmed 0.6 0.2 True 50 div global high 3 0.5 10 nearest_neighbors lobpcg cluster_qr linkx 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 30 div global mid 3 0.4 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 40 page local low 3 0.5 10 nearest_neighbors lobpcg cluster_qr pgnn 15 100 0.05 0.0005 16 0.5 0.1 2.0 8 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 30 page global lmh 3 0.4 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 5 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 40 div global lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr bern 15 100 0.05 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 40 div local mid 3 0.4 10 nearest_neighbors lobpcg cluster_qr aero 15 100 0.005 0.0005 16 0.5 0.1 1.5 16 4 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 30 page global high 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5 																																
+run_exp pubmed 0.6 0.2 True 30 page global mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																																
+run_exp pubmed 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																															
+run_exp pubmed 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.001 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.5 																																
+run_exp pubmed  0.6     0.2     True    50      page    global  low     3       0.3     10      nearest_neighbors       lobpcg  cluster_qr      spec    15      100     0.001   0.0005  16      0.2     0.1     1.5     20      8       0.6     0.6																															
+
+
+																														
+run_exp citeseer 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr mlp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp citeseer 0.6 0.2 True 40 page global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr sage 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp citeseer 0.6 0.2 True 30 div global lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr gat 15 100 0.001 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 30 div local mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.7 0.5																																
+run_exp citeseer 0.6 0.2 True 30 page global lmh 3 0.4 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.001 0.0005 16 0.5 0.1 1.5 10 8 0.7 0.7 																															
+run_exp citeseer 0.6 0.2 True 40 div local mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr linkx 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 30 div local low 3 0.5 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.001 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																															
+run_exp citeseer 0.6 0.2 True 40 page global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr pgnn 15 100 0.01 0.0005 16 0.5 0.1 2.0 8 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 40 page global high 3 0.5 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 5 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 30 div local mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr bern 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.6 																																
+run_exp citeseer 0.6 0.2 True 40 page local lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr aero 15 100 0.01 0.0005 16 0.5 0.1 1.5 4 4 0.1 0.5 																															
+run_exp citeseer 0.6 0.2 True 30 page global high 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5 																																
+run_exp citeseer 0.6 0.2 True 30 div global high 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.001 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5 																																
+run_exp citeseer 0.6 0.2 True 50 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.2 0.1 1.5 20 8 0.6 0.4 																																
+
+																															
+run_exp computers	0.6	0.2	TRUE	40	page	global	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	mlp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp computers	0.6	0.2	TRUE	40	div	global	high	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	sage	15	100	0.001	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5						
+run_exp computers	0.6	0.2	TRUE	50	page	global	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gat	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5					
+run_exp computers	0.6	0.2	TRUE	40	div	global	high	3	0.4	10	nearest_neighbors	lobpcg	cluster_qr	appnp	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.7	0.5						
+run_exp computers	0.6	0.2	TRUE	40	div	global	mid	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	gprgnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.7	0.5					
+run_exp computers	0.6	0.2	TRUE	30	div	local	lmh	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	linkx	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5						
+run_exp computers	0.6	0.2	TRUE	40	page	local	lmh	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	gatv2	15	100	0.005	0.0005	8	0.6	0.1	1.5	10	8	0.1	0.5						
+run_exp computers	0.6	0.2	TRUE	30	div	global	lmh	3	0.3	10	nearest_neighbors	lobpcg	cluster_qr	pgnn	15	100	0.01	0.0005	16	0.5	0.1	2	8	8	0.1	0.5					
+run_exp computers	0.6	0.2	TRUE	40	page	local	mid	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	dagnn	15	100	0.01	0.0005	16	0.5	0.1	1.5	5	8	0.1	0.5						
+run_exp computers	0.6	0.2	TRUE	50	div	global	high	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	bern	15	100	0.01	0.0005	16	0.5	0.1	1.5	10	8	0.1	0.5					
+run_exp computers	0.6	0.2	TRUE	30	page	global	lmh	3	0.5	10	nearest_neighbors	lobpcg	cluster_qr	aero	15	100	0.005	0.0005	16	0.5	0.1	1.5	4	4	0.1	0.5					
+run_exp computers 0.6 0.2 True 30 page local low 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5 																															
+run_exp computers 0.6 0.2 True 30 div global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.3 0.1 1.5 20 8 0.1 0.5 																															
+run_exp computers 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.5																															
+run_exp computers 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.01 0.0005 16 0.7 0.1 1.5 20 8 0.1 0.7 																															
+run_exp computers 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.2 0.1 1.5 20 8 0.4 0.6																															
+																															
+run_exp photo 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr mlp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp photo 0.6 0.2 True 30 page local high 3 0.4 10 nearest_neighbors lobpcg cluster_qr sage 15 100 0.001 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp photo 0.6 0.2 True 50 page global lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr gat 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																															
+run_exp photo 0.6 0.2 True 40 page local mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr appnp 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.7 0.5 																																
+run_exp photo 0.6 0.2 True 30 page global high 3 0.5 10 nearest_neighbors lobpcg cluster_qr gprgnn 15 100 0.001 0.0005 16 0.5 0.1 1.5 10 8 1.0 0.5 																																
+run_exp photo 0.6 0.2 True 30 page local high 3 0.5 10 nearest_neighbors lobpcg cluster_qr linkx 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5 																															
+run_exp photo 0.6 0.2 True 30 div global high 3 0.4 10 nearest_neighbors lobpcg cluster_qr gatv2 15 100 0.005 0.0005 8 0.6 0.1 1.5 10 8 0.1 0.5 																																
+run_exp photo 0.6 0.2 True 50 div local low 3 0.4 10 nearest_neighbors lobpcg cluster_qr pgnn 15 100 0.01 0.0005 16 0.5 0.1 2.0 8 8 0.1 0.5 																																
+run_exp photo 0.6 0.2 True 40 page global lmh 3 0.5 10 nearest_neighbors lobpcg cluster_qr dagnn 15 100 0.01 0.0005 16 0.5 0.1 1.5 5 8 0.1 0.5 																																
+run_exp photo 0.6 0.2 True 40 div global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr bern 15 100 0.01 0.0005 16 0.5 0.1 1.5 10 8 0.1 0.5																																
+run_exp photo 0.6 0.2 True 30 div local mid 3 0.5 10 nearest_neighbors lobpcg cluster_qr aero 15 100 0.01 0.0005 16 0.5 0.1 1.5 4 4 0.1 0.5 																																
+run_exp photo 0.6 0.2 True 30 page local mid 3 0.3 10 nearest_neighbors lobpcg cluster_qr dirsage 15 100 0.01 0.0005 16 0.0 0.1 1.5 20 8 0.5 0.5																																
+run_exp photo 0.6 0.2 True 50 page global low 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpgcn 15 100 0.01 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.5 																																
+run_exp photo 0.6 0.2 True 30 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr pmlpappnp 15 100 0.01 0.0005 16 0.1 0.1 1.5 20 8 0.1 0.5 																																
+run_exp photo 0.6 0.2 True 50 page global lmh 3 0.3 10 nearest_neighbors lobpcg cluster_qr poly 15 100 0.01 0.0005 16 0.5 0.1 1.5 20 8 0.1 0.5 																															
+run_exp photo 0.6 0.2 True 30 page local high 3 0.3 10 nearest_neighbors lobpcg cluster_qr spec 15 100 0.001 0.0005 16 0.0 0.1 1.5 20 8 0.4 0.6 																																
