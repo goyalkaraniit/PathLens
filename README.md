@@ -2,6 +2,7 @@
 Official repo of PathLens published in CIKM25
 
 Please cite this if you happen to utilise our work
+
 @inproceedings{10.1145/3746252.3761256,
 author = {Goyal, Karan and Samanta, Saankhya and Goyal, Vikram and Mohania, Mukesh},
 title = {PathLens: Structurally Enhancing Heterophilic Graphs for GNNs},
